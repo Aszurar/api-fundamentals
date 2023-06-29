@@ -8,9 +8,9 @@ const server = http.createServer((req, res) => {
     console.log('Método GET!');
     console.log('Listagem de jogos!');
 
-    res.setHeader('Content-Type', 'application/json');
-
-    return res.end(JSON.stringify(games));
+    return res
+      .setHeader('Content-Type', 'application/json')
+      .end(JSON.stringify(games));
   }
 
   if (method === 'POST' && url === '/games') {
@@ -23,10 +23,10 @@ const server = http.createServer((req, res) => {
       description: 'Action RPG',
     });
 
-    res.end('Criação de jogo!');
+    return res.writeHead(201).end('Criação de jogo!');
   }
 
-  console.log('Deu bom!');
+  return res.writeHead(404).end('Requisição não encontrada!');
 });
 
 server.listen(3333);
