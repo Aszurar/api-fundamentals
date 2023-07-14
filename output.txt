@@ -1,0 +1,4 @@
+Primeiro chunk de dados
+Segundo chunk de dados
+Terceiro chunk de dados
+Finalizando a escrita
